@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+<body>
+
+	<div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+	<div class="container">
+		<form action="#">
+			<h3>Sign Up!</h3>
+			<div id="lab-div">
+				<label for="username" required>Username</label>
+				<div id="result">
+					<input type="text" placeholder="Username" id="username" required>
+				</div>
+			    
+			</div>
+			<div id="lab-div">
+				<label for="Email">Email</label>
+				<div id="result">
+					<input type="text" placeholder="Email" id="email" required>
+				</div>
+			    
+			</div>
+			<div id="lab-div">
+				<label for="Email">password</label>
+				<div id="result">
+					<input type="password" placeholder="password" id="password" ><button onclick="showandhide()" id="showandhider"></button>
+				</div>
+			    
+			</div>
+	        <div id="lab-div">
+				<label for="password">Confirm Password</label>
+				<div id="result">
+					<input type="password" placeholder="Confirm Password" id="confirm password" required>
+					<button onclick="showplan()" id="showrest"></button>
+				</div>
+			    
+			</div>
+			<div id="Terms">
+				<input type="checkbox" id="checker" required>
+				<span><a href="">I Agree to the Terms and Conditions</a></span>
+			</div>
+			<div id="create">
+				<p>Already have an Account? <a href="../login.html">LogIn</a></p>
+			  </div>
+			<div id="submit">
+				<button type="button" onclick="signUp()">Sign Up</button>
+			</div>
+		</form>
+	</div>
+	<table id="carrier">
+		<thead>
+			<th>Username</th>
+			<th>Email</th>
+			<th>Password</th>
+			<th>Checked</th>
+		</thead>
+
+		<tbody id="table">
+
+		</tbody>
+	 </table>
+</body>
+</html>
+
+<script src="signup.js"></script>
