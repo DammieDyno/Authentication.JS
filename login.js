@@ -11,6 +11,7 @@ function login() {
    }
    else if (txt) {
       alert(`Login Successful ${email.value}`)
+      window.location.href="dasboard.html"
    }
    else {
       alert('account not registered')

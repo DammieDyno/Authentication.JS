@@ -4,7 +4,7 @@ let password = document.getElementById("password")
 let confirmPassword = document.getElementById("confirm password")
 let checker = document.getElementById("checker")
 
-let store = []  && JSON.parse(localStorage.getItem("userdetails"))
+let store = JSON.parse(localStorage.getItem("userdetails")) || []
 function signUp() {
     if (username.value == '' || email.value == '' || password.value == '' || confirmPassword.value == '') {
         alert('all field are mandatory')
@@ -60,7 +60,7 @@ function showplan() {
 let showTable = () =>{
     table.innerHTML =''
 
-    datas.forEach((data, index)=> {
+    store.forEach((data, index)=> {
         table.innerHTML +=`<tr id="carry"> <td id="idd">${data.username}</td><td id="idd">${data.email} <td id="idd">${data.confirmPassword}</td> <td id="idd">${data.checker}</tr>`
     });
 }
