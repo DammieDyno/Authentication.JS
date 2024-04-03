@@ -4,7 +4,7 @@ let password = document.getElementById("password")
 let confirmPassword = document.getElementById("confirm password")
 let checker = document.getElementById("checker")
 
-let datas = []
+let store = []  && JSON.parse(localStorage.getItem("userdetails"))
 function signUp() {
     if (username.value == '' || email.value == '' || password.value == '' || confirmPassword.value == '') {
         alert('all field are mandatory')
@@ -16,7 +16,7 @@ function signUp() {
         alert("enter more than 8 password")
     }
     else {
-        let UserDataObj = {
+        let dataStorage = {
             username: username.value,
             email: email.value,
             passsword: password.value,
@@ -24,16 +24,17 @@ function signUp() {
             checker: checker.checked
         }
         
-        const exist = datas.find(ex=> ex.email == email.value)
+        const exist = store.find(ex=> ex.email == email.value)
         console.log(exist);
         if(exist){
             alert('User already Exist')
         }
         else{
-            datas.push(UserDataObj)
-            localStorage.setItem("userdetails",JSON.stringify(datas))
+            store.push(dataStorage)
+            localStorage.setItem("userdetails",JSON.stringify(store))
+            window.location.href="login.html"
             alert(`sign up successful ${username.value}`)
-            console.log(datas);
+            console.log(store);
             showTable() 
         }
     }
